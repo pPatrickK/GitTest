@@ -149,6 +149,9 @@ include_log('ctrlMel','Controller Mellinger',('pitchd','rolld'),('pitch desired'
 include_log('kalmanUSC','Estimator Kalman USC',('pitch_eUSC','roll_eUSC'),('pitch estimated','roll estimated'),'pitch and roll [DEG]','Angles','angles')
 
 
+
+
+
 #include_log('vicon','Vicon Velocity',('v_x','v_y','v_z'),('vX','vY','vZ'),'Velocity [m/s]','Vicon Velocity')
 #include_log('vicon','Vicon System Latency',(['dt']),(['dT']),'Time since last Pkg [ms]','Vicon Package Arrival')
 #include_log('vicon','Start Flag',(['startFlag']),(['startFlag']),'Time since last Pkg [ms]','startFlag')
