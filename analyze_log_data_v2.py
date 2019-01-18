@@ -137,13 +137,22 @@ def include_log(key_group,group_label,sub_key_list,sub_key_label_list,plot_y_lab
 # IF ONLY ONE LOGGING GROUP KEY USE NON CURLY BRACKETS AROUND THE STRING INPUT !!!
 # Example: (['aZimu'])
 
-# Vicon
+# figure 1
 include_log('vicon','Vicon Position',('x','y','z'),('X','Y','Z'),'Position [m]','Vicon Position',1)
+# figure 3
+include_log('ctrlMel','Controller Mellinger',('Mx','My'),('Mx','My'),'moments','By Mellinger calculated moments',3)
+# figure 4
+include_log('ctrlMel','Controller Mellinger',(['cThrust']),(['current thrust']),'current thrust','current thrust from Mellinger Controller',4)
+# figure angles
+include_log('vicon','Vicon Angles',('pitch','roll'),('pitch actual','roll actual'),'pitch and roll [Deg]','Actual Angles','angles')
+include_log('ctrlMel','Controller Mellinger',('pitchd','rolld'),('pitch desired','roll desired'),'pitch and roll [Deg]','Desired Angles','angles')
+include_log('kalmanUSC','Estimator Kalman USC',('pitch_eUSC','roll_eUSC'),('pitch estimated','roll estimated'),'pitch and roll [DEG]','Angles','angles')
+
+
 #include_log('vicon','Vicon Velocity',('v_x','v_y','v_z'),('vX','vY','vZ'),'Velocity [m/s]','Vicon Velocity')
 #include_log('vicon','Vicon System Latency',(['dt']),(['dT']),'Time since last Pkg [ms]','Vicon Package Arrival')
 #include_log('vicon','Start Flag',(['startFlag']),(['startFlag']),'Time since last Pkg [ms]','startFlag')
 #include_log('vicon','FuckYou',(['fuckYou']),(['fuckYou']),'Time since last Pkg [ms]','fuckYou')
-include_log('vicon','Vicon Angles',('pitch','roll'),('pitch actual','roll actual'),'pitch and roll [Deg]','Actual Angles','angles')
 # #  Control Data
 # include_log('ctrltarget','CTRL Target',('roll','pitch','yaw'),('Roll','Pitch','Yaw'),'Object Rot Angle [°]','Control Target Data')
 # include_log('ctrltarget','CTRL Target Data',('emergencyStop','upsideDown'),('Emergency Stop ','Upside Down '),'Triggered? [bool]','Control Target FLAGS')
@@ -170,11 +179,7 @@ include_log('vicon','Vicon Angles',('pitch','roll'),('pitch actual','roll actual
 # # Mellinger Controler Data
 # include_log('ctrlMel','Controler Mellinger',('spR','spP','spY'),('spR','spP','spY'),'Setpoint Angular Rates [?]','Mellinger Setpoint Rates')
 # include_log('ctrlMel','Controller Mellinger',('i_err_x','i_err_y','i_err_z'),('errorX','errorY','errorZ'),'?','Mellinger Position Error')
-include_log('ctrlMel','Controller Mellinger',('pitchd','rolld'),('pitch desired','roll desired'),'pitch and roll [Deg]','Desired Angles','angles')
-include_log('ctrlMel','Controller Mellinger',('Mx','My'),('Mx','My'),'moments','By Mellinger calculated moments',3)
-include_log('ctrlMel','Controller Mellinger',(['cThrust']),(['current thrust']),'current thrust','current thrust from Mellinger Controller',4)
 # Estimator Kalman Data
 #include_log('estKal','Estimator Kalman',('pitch_e','roll_e'),('pitch estimated','roll estimated'),'pitch and roll [Deg]','Estimated Angles')
 # Estimator KalmanUSC Data
-include_log('kalmanUSC','Estimator Kalman USC',('pitch_eUSC','roll_eUSC'),('pitch estimated','roll estimated'),'pitch and roll [DEG]','Angles','angles')
 plt.show()
